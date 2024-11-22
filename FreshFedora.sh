@@ -81,6 +81,9 @@ curl -fsSL https://tailscale.com/install.sh | sh
 echo "Install Jellyfin"
 flatpak install flathub com.github.iwalton3.jellyfin-media-player -y
 
+### Deluge
+echo "Installing Deluge"
+sudo dnf install deluge -y
 
 ### Gnome Extensions
 echo "Installing Gnome Extensions"
