@@ -10,15 +10,15 @@ sudo dnf update
 sudo dnf install btrfs-assistant -y
 
 ### RPM Fusion 
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf group update core
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf group update core -y
 
 ### Multimedia Codecs
-sudo dnf swap ffmpeg-free ffmpeg --allowerasing
-sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
-sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
+sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
+sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
 
 
 # Update the .smbcredentials file with CIFS username and password
@@ -73,14 +73,14 @@ curl -fsSL https://tailscale.com/install.sh | sh
 
 
 ### Jellyfin
-flatpak install flathub com.github.iwalton3.jellyfin-media-player
+flatpak install flathub com.github.iwalton3.jellyfin-media-player -y
 
 
 ### Gnome Extensions
-flatpak install flathub org.gnome.Extensions
-flatpak install flathub com.mattjakeman.ExtensionManager
+flatpak install flathub org.gnome.Extensions  -y
+flatpak install flathub com.mattjakeman.ExtensionManager -y
 
 
-sudo dnf update
+sudo dnf update -y
 
 # End of the script. You can save this script with a .sh extension. Suggested filename: mount_cifs.sh
