@@ -7,20 +7,24 @@
 sudo dnf update
 
 ### Snapshots
+echo "Install BRTFS Snapshot tool"
 sudo dnf install btrfs-assistant -y
 
 ### RPM Fusion 
+echo "Install RPM fusion repos"
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf group update core -y
 
 ### Multimedia Codecs
+echo "Install Multimedia codecs"
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
 sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld -y
 sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld -y
 
 
+echo "CIFS Mounts"
 # Update the .smbcredentials file with CIFS username and password
 # Template for .smbcredentials:
 #   username=<cifsusername>
@@ -69,14 +73,17 @@ echo "Displaying details of all mounted filesystems..."
 df -h
 
 ### Tailscale
+echo "Install Tailscale VPN"
 curl -fsSL https://tailscale.com/install.sh | sh
 
 
 ### Jellyfin
+echo "Install Jellyfin"
 flatpak install flathub com.github.iwalton3.jellyfin-media-player -y
 
 
 ### Gnome Extensions
+echo "Installing Gnome Extensions"
 flatpak install flathub org.gnome.Extensions  -y
 flatpak install flathub com.mattjakeman.ExtensionManager -y
 
