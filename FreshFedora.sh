@@ -4,7 +4,7 @@
 # This script helps to mount a CIFS network share on Fedora/RHEL
 # Installs BTRFS Assistant, adds Codecs for Firefox multimedia, mounts paragon Nas Shares
 
-sudo dnf update
+sudo dnf update -y
 
 ### Snapshots
 echo "Install BRTFS Snapshot tool"
